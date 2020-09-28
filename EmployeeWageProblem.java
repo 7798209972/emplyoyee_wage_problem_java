@@ -10,6 +10,9 @@ public class EmployeeWageProblem {
 	public static final int FULL_DAY_HOUR = 8;
 	public static final int EMPLOYEE_RATE_PER_HOUR = 20;
 
+	/* Declaring Maximum Working Hour */
+	public static final int MAX_WORKING_HOUR = 100;
+
 	/* Adding Part Time Hour */
 
 	public static final int PART_TIME_HOUR = 4;
@@ -32,20 +35,24 @@ public class EmployeeWageProblem {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		System.out.println("============================================");
 
+
+		/* Calcuting Wages till a condition of maximum working hours or day is reached a month */
+
+		while ( i<=20 && total_working_hour<=MAX_WORKING_HOUR )
+		{
+
 		/* Using Random function for checking attendance */
 
 		int emp_attendance = (int) (Math.floor(Math.random()*10)%3);
 
 		/* Solving Using Switvh Case Statement */
 
-		while ( i<=20 )
-		{
-
-		int emp_attendance = (int) (Math.floor(Math.random()*10)%3);
-
 		switch(emp_attendance)
 		{
 			case IS_FULL_TIME :
+
+					/* Getting Status & Working Hours */
+
 					status="Full time |";
 					total_hours=FULL_DAY_HOUR;
 					break;
@@ -58,13 +65,24 @@ public class EmployeeWageProblem {
 					total_hours=0;
 					break;
 		}
+
+		/* Calculating Wage */
+
 		wage=total_hours*EMPLOYEE_RATE_PER_HOUR;
+
+		/* Calculating Total Wage for a Month */
 		total_wage+=wage;
 		
 		System.out.println("Day "+i+" "+status+" Wage - Rs."+wage+"/-");
+
+		/* Increamenting Working Hours & Days*/
+
 		i++;
 		total_working_hour+=total_hours;
 	}
+	System.out.println("============================================");
+	System.out.println("Total Wage : Rs."+total_wage+"/-");
+	System.out.println("Total Working Hours : "+total_working_hour);
 	System.out.println("============================================");
 
 	}
