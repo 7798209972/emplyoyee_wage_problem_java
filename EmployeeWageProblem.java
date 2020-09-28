@@ -10,6 +10,10 @@ public class EmployeeWageProblem {
 	public static final int FULL_DAY_HOUR = 8;
 	public static final int EMPLOYEE_RATE_PER_HOUR = 20;
 
+	/* Adding Part Time Hour */
+
+	public static final int PART_TIME_HOUR = 4;
+
 
 	public void get_employee_wage()
 	{
