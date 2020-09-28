@@ -21,6 +21,7 @@ public class EmployeeWageProblem {
 	public int total_wage=0;
 	public int total_working_hour=0;
 	public String status;
+	public int i=1;
 
 
 	public void get_employee_wage()
@@ -37,6 +38,11 @@ public class EmployeeWageProblem {
 
 		/* Solving Using Switvh Case Statement */
 
+		while ( i<=20 )
+		{
+
+		int emp_attendance = (int) (Math.floor(Math.random()*10)%3);
+
 		switch(emp_attendance)
 		{
 			case IS_FULL_TIME :
@@ -52,7 +58,15 @@ public class EmployeeWageProblem {
 					total_hours=0;
 					break;
 		}
+		wage=total_hours*EMPLOYEE_RATE_PER_HOUR;
+		total_wage+=wage;
 		
+		System.out.println("Day "+i+" "+status+" Wage - Rs."+wage+"/-");
+		i++;
+		total_working_hour+=total_hours;
+	}
+	System.out.println("============================================");
+
 	}
 	public static void main(String[] args)
 	{
