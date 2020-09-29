@@ -17,18 +17,18 @@ public class EmployeeWageProblem {
 
 	public static final int PART_TIME_HOUR = 4;
 
-	/* Declaring Variables */
+	/* Refactoring Code to Compute Employee Wage Using Static Class Method */
 
-	public int total_hours=0;
-	public int wage=0;
-	public int total_wage=0;
-	public int total_working_hour=0;
-	public String status;
-	public int i=1;
-
-
-	public void get_employee_wage()
+	public static int get_employee_wage()
 	{
+		/* Declaring Variables */
+
+		 int total_hours=0;
+		 int wage=0;
+		 int total_wage=0;
+		 int total_working_hour=0;
+		 String status;
+		 int i=1;
 		/* Welcome Message */
 
 		System.out.println("============================================");
@@ -84,6 +84,7 @@ public class EmployeeWageProblem {
 	System.out.println("Total Wage : Rs."+total_wage+"/-");
 	System.out.println("Total Working Hours : "+total_working_hour);
 	System.out.println("============================================");
+	return total_wage;
 
 	}
 	public static void main(String[] args)
