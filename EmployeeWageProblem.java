@@ -25,7 +25,7 @@ public class EmployeeWageProblem {
 	public int wage=0;
 	public int total_wage=0;
 	public int total_working_hour=0;
-	public String status;
+	public String status, company;
 	public int i=1;
 	public int no_of_days, no_of_hours, wage_per_hour, wage_rate;
 
@@ -46,6 +46,8 @@ public class EmployeeWageProblem {
 
 	public void get_wage_info()
 	{
+		System.out.println("Enter Company Name : ");
+		company=me.next();
 		System.out.println("Enter maximum number of working days for a month : ");
 		no_of_days=me.nextInt();
 		System.out.println("Enter maximum number of working hours for a month : ");
@@ -61,7 +63,7 @@ public class EmployeeWageProblem {
 
 		/* Message Displaying */
 		System.out.println("============================================");
-		System.out.println("Employee Wage Details for "+no_of_days+" Days");
+		System.out.println("Employee Wage Details of "+company+" for "+no_of_days+" Days");
 		System.out.println("============================================");
 
 		/* Calcuting Wages till a condition of maximum working hours or day is reached a month */
