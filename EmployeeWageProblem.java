@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class EmployeeWageProblem {
 
 	/* Constants */
@@ -17,28 +18,55 @@ public class EmployeeWageProblem {
 
 	public static final int PART_TIME_HOUR = 4;
 
-	/* Refactoring Code to Compute Employee Wage Using Static Class Method */
 
-	public static int get_employee_wage()
-	{
 		/* Declaring Variables */
 
-		 int total_hours=0;
-		 int wage=0;
-		 int total_wage=0;
-		 int total_working_hour=0;
-		 String status;
-		 int i=1;
+	public int total_hours=0;
+	public int wage=0;
+	public int total_wage=0;
+	public int total_working_hour=0;
+	public String status;
+	public int i=1;
+	public int no_of_days, no_of_hours, wage_per_hour, wage_rate;
+
+	Scanner me=new Scanner(System.in);
+
+	/* Using Default Constructer for Initializing Welcome Message */
+
+	EmployeeWageProblem()
+	{
 		/* Welcome Message */
 
 		System.out.println("============================================");
 		System.out.println("Welcome to Employee Wage Computation Program");
 		System.out.println("============================================");
+	}
 
+	/* Method for getting number of working hours and days */
+
+	public void get_wage_info()
+	{
+		System.out.println("Enter maximum number of working days for a month : ");
+		no_of_days=me.nextInt();
+		System.out.println("Enter maximum number of working hours for a month : ");
+		no_of_hours=me.nextInt();
+		System.out.println("Enter Wage Rate per hours : ");
+		wage_rate=me.nextInt();
+	}
+
+	/* Method to Compute Employee Wage */
+
+	public void get_employee_wage()
+	{
+
+		/* Message Displaying */
+		System.out.println("============================================");
+		System.out.println("Employee Wage Details for "+no_of_days+" Days");
+		System.out.println("============================================");
 
 		/* Calcuting Wages till a condition of maximum working hours or day is reached a month */
 
-		while ( i<=20 && total_working_hour<=MAX_WORKING_HOUR )
+		while ( i<=no_of_days && total_working_hour<=no_of_hours )
 		{
 
 		/* Using Random function for checking attendance */
@@ -68,7 +96,7 @@ public class EmployeeWageProblem {
 
 		/* Calculating Wage */
 
-		wage=total_hours*EMPLOYEE_RATE_PER_HOUR;
+		wage=total_hours*wage_rate;
 
 		/* Calculating Total Wage for a Month */
 		total_wage+=wage;
@@ -84,13 +112,14 @@ public class EmployeeWageProblem {
 	System.out.println("Total Wage : Rs."+total_wage+"/-");
 	System.out.println("Total Working Hours : "+total_working_hour);
 	System.out.println("============================================");
-	return total_wage;
+	// return total_wage;
 
 	}
 	public static void main(String[] args)
 	{
 		
 		EmployeeWageProblem obj=new EmployeeWageProblem();
+		obj.get_wage_info();
 		obj.get_employee_wage();
 		
 		
