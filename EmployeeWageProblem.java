@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+interface IComputeEmpWage
+{
+	public void EmpWageBuilder();
+	public void computeEmpWage();
+}
+
 class CompanyEmpWage
 {
 
@@ -22,7 +28,7 @@ class CompanyEmpWage
 		wage_rate=me.nextInt();
 	}
 }
-public class EmployeeWageProblem extends CompanyEmpWage{
+public class EmployeeWageProblem extends CompanyEmpWage implements IComputeEmpWage{
 
 	/* Constants */
 
