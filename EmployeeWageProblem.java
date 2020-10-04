@@ -6,6 +6,7 @@ interface IComputeEmpWage
 	//Declaring methods
 	public void addCompanyEmpWage(String company, int emp_rate_per_hour, int no_of_working_days, int max_hours_per_month);
 	public void computeEmpWage();
+	public int getTotalWage(String company);
 }
 
 class CompanyEmpWage
@@ -41,7 +42,7 @@ class CompanyEmpWage
 	@Override
 	public String toString()
 	{
-		return "Total Employee Wage of Company : "+company+" is : Rs."+totalEmpWage+"/-";
+		return "==================================================\nTotal Employee Wage of Company : "+company+" is : Rs."+totalEmpWage+"/-";
 	}
 }
 public class EmployeeWageProblem implements IComputeEmpWage{
@@ -59,9 +60,11 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 
 	public static final int PART_TIME_HOUR = 4;
 
-	//Declaring Array List
+	//Declaring Array List and HashMap
+
 	private int no_of_company=0;
 	private ArrayList<CompanyEmpWage> company_emp_wage_list;
+	private HashMap<String, CompanyEmpWage> company_to_emp_wage_map;
 
 	//Default constructor for welcome message and initialization
 	public EmployeeWageProblem()
@@ -69,6 +72,7 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 		System.out.println("==================================================");
 		System.out.println("Welcome to Employee Wage Computation Program\n");
 		company_emp_wage_list=new ArrayList<>();
+		company_to_emp_wage_map=new HashMap<>();
 	}
 
 	//Method for getting rate, company name, max working hours and max working days
@@ -78,6 +82,9 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 
 		//Adding data to ArrayList
 		company_emp_wage_list.add(companyEmpWage);
+
+		//Adding data to hashmap
+		company_to_emp_wage_map.put(company, companyEmpWage);
 
 	}
 
@@ -95,6 +102,13 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 		}
 	}
 
+
+	// Getting Total employee Wage of Company from HashMap
+	@Override
+	public int  getTotalWage(String company)
+	{
+		return company_to_emp_wage_map.get(company).totalEmpWage;
+	}
 
 
 	// Computing Employee Wage for particular company
