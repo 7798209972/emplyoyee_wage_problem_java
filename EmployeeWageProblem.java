@@ -47,6 +47,7 @@ public class EmployeeWageProblem extends CompanyEmpWage{
 	public String status;
 	public int i=1;
 
+
 	/* Using Default Constructer for Initializing Welcome Message */
 
 	EmployeeWageProblem()
@@ -123,9 +124,13 @@ public class EmployeeWageProblem extends CompanyEmpWage{
 	}
 	public static void main(String[] args)
 	{
-		
+		//Creating objects
+
 		EmployeeWageProblem obj1=new EmployeeWageProblem();
 		EmployeeWageProblem obj2=new EmployeeWageProblem();
+
+		//Calling methods
+
 		obj1.EmpWageBuilder();
 		obj1.computeEmpWage();
 		obj2.EmpWageBuilder();
