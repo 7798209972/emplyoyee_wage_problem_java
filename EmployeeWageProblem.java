@@ -44,7 +44,7 @@ public class EmployeeWageProblem {
 
 	/* Method for getting number of working hours and days */
 
-	public void get_wage_info()
+	public void EmpWageBuilder()
 	{
 		System.out.println("Enter Company Name : ");
 		company=me.next();
@@ -58,7 +58,7 @@ public class EmployeeWageProblem {
 
 	/* Method to Compute Employee Wage */
 
-	public void get_employee_wage()
+	public void computeEmpWage()
 	{
 
 		/* Message Displaying */
@@ -120,9 +120,12 @@ public class EmployeeWageProblem {
 	public static void main(String[] args)
 	{
 		
-		EmployeeWageProblem obj=new EmployeeWageProblem();
-		obj.get_wage_info();
-		obj.get_employee_wage();
+		EmployeeWageProblem obj1=new EmployeeWageProblem();
+		EmployeeWageProblem obj2=new EmployeeWageProblem();
+		obj1.EmpWageBuilder();
+		obj1.computeEmpWage();
+		obj2.EmpWageBuilder();
+		obj2.computeEmpWage();
 		
 		
 	}
