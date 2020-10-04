@@ -177,10 +177,13 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 
 		//Calling methods
 		empWageBuilder.addCompanyEmpWage("TCS", 230, 20, 100);
-		empWageBuilder.addCompanyEmpWage("Infosys", 230, 20, 100);
+		empWageBuilder.addCompanyEmpWage("Infosys", 250, 20, 100);
 
 		empWageBuilder.computeEmpWage();
 
+		//Getting total employee wage of particular company
+		System.out.println("Total Wage of TCS :"+empWageBuilder.getTotalWage("TCS"));
+		System.out.println("Total Wage of Infosys :"+empWageBuilder.getTotalWage("TCS"));
 		
 	}
 }
