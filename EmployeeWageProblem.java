@@ -42,7 +42,7 @@ class CompanyEmpWage
 	@Override
 	public String toString()
 	{
-		return "==================================================\nTotal Employee Wage of Company : "+company+" is : Rs."+totalEmpWage+"/-";
+		return "Total Employee Wage of Company : "+company+" is : Rs."+totalEmpWage+"/-";
 	}
 }
 public class EmployeeWageProblem implements IComputeEmpWage{
