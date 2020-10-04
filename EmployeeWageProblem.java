@@ -1,48 +1,14 @@
 import java.util.Scanner;
-public class EmployeeWageProblem {
 
-	/* Constants */
+class CompanyEmpWage
+{
 
-	public static final int IS_FULL_TIME = 1;
-	public static final int IS_PART_TIME = 2;
-
-	/* Declaring Full Day Hour & Employee Wage Per Hour */
-	
-	public static final int FULL_DAY_HOUR = 8;
-	public static final int EMPLOYEE_RATE_PER_HOUR = 20;
-
-	/* Declaring Maximum Working Hour */
-	public static final int MAX_WORKING_HOUR = 100;
-
-	/* Adding Part Time Hour */
-
-	public static final int PART_TIME_HOUR = 4;
-
-
-		/* Declaring Variables */
-
-	public int total_hours=0;
-	public int wage=0;
-	public int total_wage=0;
-	public int total_working_hour=0;
-	public String status, company;
-	public int i=1;
-	public int no_of_days, no_of_hours, wage_per_hour, wage_rate;
-
+	/* Declaring Variables */
+	public String company;
+	public int no_of_days, no_of_hours, wage_rate;
 	Scanner me=new Scanner(System.in);
 
-	/* Using Default Constructer for Initializing Welcome Message */
-
-	EmployeeWageProblem()
-	{
-		/* Welcome Message */
-
-		System.out.println("============================================");
-		System.out.println("Welcome to Employee Wage Computation Program");
-		System.out.println("============================================");
-	}
-
-	/* Method for getting number of working hours and days */
+	/* Method to getting Company name, maximum No of days,working hours and Wage rate per hour */
 
 	public void EmpWageBuilder()
 	{
@@ -55,6 +21,44 @@ public class EmployeeWageProblem {
 		System.out.println("Enter Wage Rate per hours : ");
 		wage_rate=me.nextInt();
 	}
+}
+public class EmployeeWageProblem extends CompanyEmpWage{
+
+	/* Constants */
+
+	public static final int IS_FULL_TIME = 1;
+	public static final int IS_PART_TIME = 2;
+
+	/* Declaring Full Day Hour & Employee Wage Per Hour */
+	
+	public static final int FULL_DAY_HOUR = 8;
+
+	/* Adding Part Time Hour */
+
+	public static final int PART_TIME_HOUR = 4;
+
+
+	/* Declaring Variables */
+
+	public int total_hours=0;
+	public int wage=0;
+	public int total_wage=0;
+	public int total_working_hour=0;
+	public String status;
+	public int i=1;
+
+	/* Using Default Constructer for Initializing Welcome Message */
+
+	EmployeeWageProblem()
+	{
+		/* Welcome Message */
+
+		System.out.println("============================================");
+		System.out.println("Welcome to Employee Wage Computation Program");
+		System.out.println("============================================");
+	}
+
+	
 
 	/* Method to Compute Employee Wage */
 
@@ -126,7 +130,6 @@ public class EmployeeWageProblem {
 		obj1.computeEmpWage();
 		obj2.EmpWageBuilder();
 		obj2.computeEmpWage();
-		
 		
 	}
 }
