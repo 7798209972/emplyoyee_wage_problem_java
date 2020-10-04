@@ -182,6 +182,7 @@ public class EmployeeWageProblem implements IComputeEmpWage{
 		empWageBuilder.computeEmpWage();
 
 		//Getting total employee wage of particular company
+		System.out.println("==================================================");
 		System.out.println("Total Wage of TCS :"+empWageBuilder.getTotalWage("TCS"));
 		System.out.println("Total Wage of Infosys :"+empWageBuilder.getTotalWage("TCS"));
 		
